@@ -1,0 +1,63 @@
+[11-Dec-2023 14:29:06 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[11-Dec-2023 14:29:09 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 13:29:26 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 13:29:43 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 13:29:46 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 13:30:05 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 13:33:41 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:33:44 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 21
+[13-Dec-2023 13:33:47 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:33:49 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:36:08 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 13:36:11 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 13:36:57 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:37:01 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 21
+[13-Dec-2023 13:37:04 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:37:07 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:37:09 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 21
+[13-Dec-2023 13:37:27 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:37:30 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:39:20 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:39:28 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 21
+[13-Dec-2023 13:39:33 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 21
+[13-Dec-2023 13:39:49 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 13:39:50 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 21
+[13-Dec-2023 13:39:54 Europe/Riga] PHP Notice:  Undefined index: piet_komentars in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 17
+[13-Dec-2023 15:03:00 Europe/Riga] PHP Notice:  Undefined variable: select_kursi_result in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 7
+[13-Dec-2023 15:03:00 Europe/Riga] PHP Notice:  Undefined variable: select_kursi_result in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 11
+[13-Dec-2023 15:03:00 Europe/Riga] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 11
+[13-Dec-2023 15:03:00 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 20
+[13-Dec-2023 15:03:39 Europe/Riga] PHP Notice:  Undefined variable: select_kursi_result in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 7
+[13-Dec-2023 15:03:39 Europe/Riga] PHP Notice:  Undefined variable: select_kursi_result in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 11
+[13-Dec-2023 15:03:39 Europe/Riga] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 11
+[13-Dec-2023 15:03:39 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 20
+[13-Dec-2023 15:03:56 Europe/Riga] PHP Notice:  Undefined variable: select_kursi_result in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 7
+[13-Dec-2023 15:03:56 Europe/Riga] PHP Notice:  Undefined variable: select_kursi_result in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 11
+[13-Dec-2023 15:03:56 Europe/Riga] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 11
+[13-Dec-2023 15:03:56 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/kursi-list.php on line 20
+[13-Dec-2023 15:18:18 Europe/Riga] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 14
+[13-Dec-2023 15:18:18 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 27
+[13-Dec-2023 15:18:18 Europe/Riga] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 14
+[13-Dec-2023 15:18:18 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 27
+[13-Dec-2023 15:21:31 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 28
+[13-Dec-2023 15:21:31 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 28
+[13-Dec-2023 15:22:16 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 28
+[13-Dec-2023 15:22:16 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 28
+[13-Dec-2023 15:23:53 Europe/Riga] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 16
+[13-Dec-2023 15:23:53 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 30
+[13-Dec-2023 15:23:53 Europe/Riga] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 16
+[13-Dec-2023 15:23:53 Europe/Riga] PHP Notice:  Undefined variable: json in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 30
+[13-Dec-2023 15:26:33 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 25
+[13-Dec-2023 15:26:33 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 25
+[13-Dec-2023 15:30:26 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 25
+[13-Dec-2023 15:30:26 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 25
+[13-Dec-2023 15:30:35 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 25
+[13-Dec-2023 15:30:35 Europe/Riga] PHP Parse error:  syntax error, unexpected ''statuss'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 25
+[13-Dec-2023 15:30:40 Europe/Riga] PHP Notice:  Undefined index: kursi_nosaukums in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 15:30:40 Europe/Riga] PHP Notice:  Undefined index: kursi_nosaukums in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 15:30:59 Europe/Riga] PHP Notice:  Undefined index: kursi_nosaukums in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[13-Dec-2023 15:30:59 Europe/Riga] PHP Notice:  Undefined index: kursi_nosaukums in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikumi-list.php on line 24
+[15-Dec-2023 00:08:44 Europe/Riga] PHP Notice:  Undefined offset: 0 in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 28
+[15-Dec-2023 00:44:34 Europe/Riga] PHP Notice:  Undefined offset: 0 in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 28
+[15-Dec-2023 00:44:36 Europe/Riga] PHP Notice:  Undefined offset: 0 in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 28
+[15-Dec-2023 00:44:48 Europe/Riga] PHP Notice:  Undefined offset: 0 in /home2/grobina1/public_html/4pt/daugats/php1/admin/crud/pieteikums-single.php on line 28
