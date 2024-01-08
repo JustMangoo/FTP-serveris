@@ -22,7 +22,7 @@
 
 <div class="title">
     <div class="name">
-    <i class="fas fa-home"></i> Pieteikumi
+    <i class="fas fa-id-card"></i> Mans profils
     </div>
 </div>
 
@@ -36,7 +36,7 @@
         if (isset($_SESSION["lietotajvards_LYXQT"])) {
             $activeUsername = $_SESSION["lietotajvards_LYXQT"];
 
-            $lietotajs_SQL = "SELECT vards, uzvards, loma FROM kursi_lietotaji WHERE lietotajvards = ?";
+            $lietotajs_SQL = "SELECT vards, uzvards, epasts, loma, reg_datums FROM kursi_lietotaji WHERE lietotajvards = ?";
             
             if ($stmt = mysqli_prepare($savienojums, $lietotajs_SQL)) {
                 mysqli_stmt_bind_param($stmt, "s", $activeUsername);
@@ -46,6 +46,8 @@
                 if ($row = mysqli_fetch_assoc($result)) {
                     $name = $row["vards"];
                     $surname = $row["uzvards"];
+                    $email = $row["epasts"];
+                    $regDate = $row["reg_datums"];
                     $userRole = $row["loma"];
                 } else {
                     $userRole = "Nezināma loma";
@@ -58,6 +60,8 @@
                 <div class='info'>
                 <h2>" . htmlspecialchars($name) ." ". htmlspecialchars($surname)  . "</h2>
                     <h3>" . htmlspecialchars($activeUsername) . "</h3>
+                    <p>E-pasts: " . htmlspecialchars($email) . "</p>
+                    <p>Reģistrācijas datums: " . htmlspecialchars($regDate) . "</p>
                     <p>Loma: " . htmlspecialchars($userRole) . "</p>
                 </div>
             </div>";

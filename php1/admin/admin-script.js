@@ -5,6 +5,7 @@ $(document).ready(function () {
   fetchJauniPieteikumi();
   fetchPieprKursi();
   fetchKursi();
+  fetchLietotaji();
 
   function fetchPieteikumi() {
     $.ajax({
@@ -69,6 +70,38 @@ $(document).ready(function () {
       },
     });
   }
+
+  function fetchLietotaji() {
+    $.ajax({
+      url: "crud/lietotaji-list.php",
+      type: "GET",
+      success: function (response) {
+        const pieteikumi = JSON.parse(response);
+        let template = "";
+        pieteikumi.forEach((pieteikums) => {
+          template += `
+                        <tr kursaID ="${pieteikums.id}">
+                            <td>${pieteikums.id}</td>
+                            <td>${pieteikums.talrunis}</td>
+                            <td>${pieteikums.vards}</td>
+                            <td>${pieteikums.uzvards}</td>
+                            <td>${pieteikums.epasts}</td>
+                            
+                            <td>${pieteikums.kurss}</td>
+                            <td>${pieteikums.statuss}</td>
+                            <td>
+                                <a href="#" class="pieteikums-item btn-edit"><i class="fa fa-edit"></i></a> 
+                                <a href="#" class="pieteikums-delete btn-delete"><i class="fa fa-trash"></i></a> 
+                            </td>
+                        </tr>
+                    `;
+        });
+
+        $("#lietotaji").html(template);
+      },
+    });
+  }
+
 
   function fetchJauniPieteikumi() {
     $.ajax({

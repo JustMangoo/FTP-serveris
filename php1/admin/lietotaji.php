@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT kursi | Lietotāju administrēšana</title>
+    <title>IT kursi | Pieteikumu administrēšana</title>
     <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
@@ -20,9 +20,9 @@
 
 <div class="title">
     <div class="name">
-        <i class="fas fa-database"></i> Kursi
+        <i class="fas fa-tasks"></i> Pieteikumi
     </div>
-    <button class="btn" id="newKurss">Pievienot jaunu</button>
+    <button class="btn" id="new">Pievienot jaunu</button>
 </div>
 
 
@@ -31,32 +31,44 @@
     <table>
         <tr>
             <th>ID</th>
-            <th>Nosaukums</th>
-            <th>Apraksts</th>
-            <th>Attēls</th>
+            <th>Lietotājvārds</th>
+            <th>Vārds</th>
+            <th>Uzvārds</th>
+            <th>E-pasts</th>
+            <th>Loma</th>
+            <th>Reģistrēts sistēmā</th>
             <th></th>
         </tr>
-        <tbody id="kursi"></tbody>
+        <tbody id="lietotaji"></tbody>
     </table>
 
     <div class="modal">
         <div class="apply">
             <div class="close_modal"><i class="fas fa-times"></i></div>
             <h2>Pieteikums</h2>
-            <form id="kursaPievForma">
+            <form id="pieteikumaForma">
                 <div class="formElements">
-                    <label>Nosaukums <span>*</span>:</label>
-                    <input type="text" id="nosaukums" required>
-                    <label>Apraksts <span>*</span>:</label>
-                    <input type="text" id="apraksts" required>
-                    <label>Attels <span>*</span>:</label>
-                    <input type="text" id="attels">
+                    <label>Vārds <span>*</span>:</label>
+                    <input type="text" id="vards" required>
+                    <label>Uzvārds <span>*</span>:</label>
+                    <input type="text" id="uzvards" required>
+                    <label>E-pasta adrese <span>*</span>:</label>
+                    <input type="email" id="epasts" required>
+                    <label>Tālrunis <span>*</span>:</label>
+                    <input type="tel" pattern="[0-9]{8}" id="talrunis" required>
+                    <label>Komentārs:</label>
+                    <input type="text" id="komentars">
+                    <label>Kurss:</label>
                     <label>Statuss:</label>
-                    <input type="checkbox" id="kurss-statuss" name="kurss-statuss" checked/>
+                    <select id="statuss" required>
+                        <option value="Jauns">Jauns</option>
+                        <option value="Atvērts">Atvērts</option>
+                        <option value="Apstiprināts">Apstiprināts</option>
+                    </select>
                     
-                    <input type="hidden" id="kursaID">
+                    <input type="" id="kursaID">
                 </div>
-                <input type="submit" name="pievKursu" value="Saglabāt" class="btn">
+                <input type="submit" name="pieteikties" value="Saglabāt" class="btn">
             </form>
         </div>
     </div>
