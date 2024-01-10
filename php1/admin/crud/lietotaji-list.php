@@ -1,7 +1,7 @@
 <?php
     require('../../connectDB.php');
     
-    $select_pieteikumi_SQL = "SELECT *, kursa_nosaukums FROM kursu_pieteikumi LEFT JOIN kursi ON kursu_pieteikumi.piet_kurss = kursa_id ORDER BY piet_id DESC";
+    $select_pieteikumi_SQL = "SELECT * FROM kursi_lietotaji ORDER BY lietotajs_id DESC";
 
     /* "SELECT kursu_pieteikumi.*, kursi.nosaukums AS kursa_nosaukums 
                           FROM kursu_pieteikumi
@@ -15,14 +15,12 @@
 
     while($row = mysqli_fetch_array($select_pieteikumi_result)){
         $json[] = array(
-            'vards' => $row['piet_vards'],
-            'uzvards' => $row['piet_uzvards'],
-            'epasts' => $row['piet_epasts'],
-            'talrunis' => $row['piet_talrunis'],
-            'komentars' => $row['piet_komentars'],
-            'kurss' => $row['piet_kurss'],
-            'kursa_nos' => $row['kursa_nosaukums'],
-            'statuss' => $row['piet_statuss'],
+            'lietotajvards' => $row['lietotajvards'],
+            'vards' => $row['vards'],
+            'uzvards' => $row['uzvards'],
+            'epasts' => $row['epasts'],
+            'reg_datums' => $row['reg_datums'],
+            'loma' => $row['loma'],
             'id' => $row['piet_id']
         );
     }
