@@ -20,7 +20,7 @@
 
 <div class="title">
     <div class="name">
-        <i class="fas fa-tasks"></i> Pieteikumi
+        <i class="fas fa-user"></i> Lietotāji
     </div>
     <button class="btn" id="new">Pievienot jaunu</button>
 </div>
@@ -45,28 +45,26 @@
     <div class="modal">
         <div class="apply">
             <div class="close_modal"><i class="fas fa-times"></i></div>
-            <h2>Pieteikums</h2>
-            <form id="pieteikumaForma">
+            <h2>Lietotājs</h2>
+            <form id="lietotajaForma">
                 <div class="formElements">
-                    <label>Vārds <span>*</span>:</label>
+                    <label>Lietotājvārds<span>*</span>:</label>
+                    <input type="text" id="lietotajvards" required>
+                    <label>Vārds<span>*</span>:</label>
                     <input type="text" id="vards" required>
-                    <label>Uzvārds <span>*</span>:</label>
+                    <label>Uzvārds<span>*</span>:</label>
                     <input type="text" id="uzvards" required>
-                    <label>E-pasta adrese <span>*</span>:</label>
+                    <label>E-pasts<span>*</span>:</label>
                     <input type="email" id="epasts" required>
-                    <label>Tālrunis <span>*</span>:</label>
-                    <input type="tel" pattern="[0-9]{8}" id="talrunis" required>
-                    <label>Komentārs:</label>
-                    <input type="text" id="komentars">
-                    <label>Kurss:</label>
-                    <label>Statuss:</label>
-                    <select id="statuss" required>
-                        <option value="Jauns">Jauns</option>
-                        <option value="Atvērts">Atvērts</option>
-                        <option value="Apstiprināts">Apstiprināts</option>
+                    <label>Loma:</label>
+                    <select id="loma" required>
+                        <option value="Moderātors">moderators</option>
+                        <option value="Admin">admins</option>
                     </select>
+                    <label>Parole<span>*</span>:</label>
+                    <input type="password" id="parole" required>
                     
-                    <input type="" id="kursaID">
+                    <input type="" id="lietotajsID">
                 </div>
                 <input type="submit" name="pieteikties" value="Saglabāt" class="btn">
             </form>

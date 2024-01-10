@@ -78,20 +78,19 @@ $(document).ready(function () {
       success: function (response) {
         const pieteikumi = JSON.parse(response);
         let template = "";
-        pieteikumi.forEach((pieteikums) => {
+        pieteikumi.forEach((lietotajs) => {
           template += `
-                        <tr kursaID ="${pieteikums.id}">
-                            <td>${pieteikums.id}</td>
-                            <td>${pieteikums.talrunis}</td>
-                            <td>${pieteikums.vards}</td>
-                            <td>${pieteikums.uzvards}</td>
-                            <td>${pieteikums.epasts}</td>
-                            
-                            <td>${pieteikums.kurss}</td>
-                            <td>${pieteikums.statuss}</td>
+                        <tr lietotajsID ="${lietotajs.id}">
+                            <td>${lietotajs.id}</td>
+                            <td>${lietotajs.lietotajvards}</td>
+                            <td>${lietotajs.vards}</td>
+                            <td>${lietotajs.uzvards}</td>
+                            <td>${lietotajs.epasts}</td>
+                            <td>${lietotajs.loma}</td>
+                            <td>${lietotajs.reg_datums}</td>
                             <td>
-                                <a href="#" class="pieteikums-item btn-edit"><i class="fa fa-edit"></i></a> 
-                                <a href="#" class="pieteikums-delete btn-delete"><i class="fa fa-trash"></i></a> 
+                                <a href="#" class="lietotajs-item btn-edit"><i class="fa fa-edit"></i></a> 
+                                <a href="#" class="lietotajs-delete btn-delete"><i class="fa fa-trash"></i></a> 
                             </td>
                         </tr>
                     `;
@@ -274,4 +273,67 @@ $(document).ready(function () {
     edit = false;
     $("#kursaPievForma").trigger("reset");
   });
+});
+
+/* LIETOTAJI */
+
+$(document).on("click", ".lietotajs-item", (e) => {
+  $(".modal").css("display", "flex");
+  const element = e.currentTarget.parentElement.parentElement;
+  console.log(element)
+  const id = $(element).attr("lietotajsID");
+  $.post("crud/lietotaji-single.php", { id }, (response) => {
+    const pieteikums = JSON.parse(response);
+    $("#lietotajvards").val(pieteikums.lietotajvards);
+    $("#vards").val(pieteikums.vards);
+    $("#uzvards").val(pieteikums.uzvards);
+    $("#epasts").val(pieteikums.epasts);
+    $("#loma").val(pieteikums.loma);
+    $("#lietotajsID").val(pieteikums.id);
+    edit = true;
+  });
+  e.preventDefault();
+});
+
+$("#lietotajaForma").submit((e) => {
+  e.preventDefault();
+  const postData = {
+    lietotajvards: $("#lietotajvards").val(),
+    vards: $("#vards").val(),
+    uzvards: $("#uzvards").val(),
+    epasts: $("#epasts").val(),
+    loma: $("#loma").val(),
+    id: $("#lietotajsID").val(),
+  };
+  const url =
+    edit === false ? "crud/lietotaji-add.php" : "crud/lietotaji-edit.php";
+  console.log(postData, url);
+  $.post(url, postData, (response) => {
+    $("#lietotajaForma").trigger("reset");
+    console.log(response);
+    fetchLietotaji();
+    $(".modal").hide();
+    edit = false;
+  });
+});
+
+$(document).on("click", "#new", (e) => {
+  $(".modal").css("display", "flex");
+});
+
+$(document).on("click", ".close_modal", (e) => {
+  $(".modal").hide();
+  edit = false;
+  $("#lietotajaForma").trigger("reset");
+});
+
+$(document).on("click", ".pieteikums-delete", (e) => {
+  if (confirm("Vai tiešām vēlies dzēst šo ierakstu?")) {
+    const element = $(this)[0].activeElement.parentElement.parentElement;
+    //console.log(element)
+    const id = $(element).attr("lietotajsID");
+    $.post("crud/lietotji-delete.php", { id }, (response) => {
+      fetchLietotaji();
+    });
+  }
 });

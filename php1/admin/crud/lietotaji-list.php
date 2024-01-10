@@ -1,27 +1,23 @@
 <?php
     require('../../connectDB.php');
     
-    $select_pieteikumi_SQL = "SELECT * FROM kursi_lietotaji ORDER BY lietotajs_id DESC";
+    $select_lietotaji_SQL = "SELECT * FROM kursi_lietotaji ORDER BY lietotajs_id ASC";
 
-    /* "SELECT kursu_pieteikumi.*, kursi.nosaukums AS kursa_nosaukums 
-                          FROM kursu_pieteikumi
-                          LEFT JOIN kursi ON kursu_pieteikumi.piet_kurss = kursi.id
-                          ORDER BY piet_id DESC"; */
-    $select_pieteikumi_result = mysqli_query($savienojums, $select_pieteikumi_SQL);
+    $select_lietotaji_result = mysqli_query($savienojums, $select_lietotaji_SQL);
 
-    if(!$select_pieteikumi_result){
+    if(!$select_lietotaji_result){
         #die("Kļūda!".mysqli_error($savienojums));
     }
 
-    while($row = mysqli_fetch_array($select_pieteikumi_result)){
+    while($row = mysqli_fetch_array($select_lietotaji_result)){
         $json[] = array(
             'lietotajvards' => $row['lietotajvards'],
             'vards' => $row['vards'],
             'uzvards' => $row['uzvards'],
             'epasts' => $row['epasts'],
-            'reg_datums' => $row['reg_datums'],
             'loma' => $row['loma'],
-            'id' => $row['piet_id']
+            'reg_datums' => $row['reg_datums'],
+            'id' => $row['lietotajs_id']
         );
     }
 
