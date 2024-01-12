@@ -3,10 +3,12 @@
 
     if(isset($_POST['id'])){
         $id = $_POST['id'];
-        $delete_lietotajs_SQL = "DELETE FROM kursi_litotaji WHERE lietotajs_id = $id";
-        $delete_lietotajs_result = mysqli_query($savienojums, $delete_pieteikums_SQL);
+        $delete_lietotajs_SQL = "UPDATE kursi_lietotaji SET 
+        statuss = '0'
+         WHERE lietotajs_id = $id";
+        $delete_lietotajs_result = mysqli_query($savienojums, $delete_lietotajs_SQL);
 
-        if(!$delete_pieteikums_result){
+        if(!$delete_lietotajs_result){
             die("Kļūda!".mysqli_error($savienojums));
         }
 

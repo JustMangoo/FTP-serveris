@@ -56,15 +56,18 @@
                     <input type="text" id="uzvards" required>
                     <label>E-pasts<span>*</span>:</label>
                     <input type="email" id="epasts" required>
-                    <label>Loma:</label>
+                    <label>Loma<span>*</span>:</label>
                     <select id="loma" required>
-                        <option value="Moderātors">moderators</option>
-                        <option value="Admin">admins</option>
+                        <option value="moderators">Moderātors</option>
+                        <option value="admins">Admin</option>
                     </select>
-                    <label>Parole<span>*</span>:</label>
-                    <input type="password" id="parole" required>
+                    <div class="checkbox-label">
+                        <label for="togglePasswordChange">Mainit paroli</label>
+                        <input type="checkbox" id="togglePasswordChange" name="togglePasswordChange"> 
+                    </div>
+                    <input type="password" id="password" name="password" required disabled>
                     
-                    <input type="" id="lietotajsID">
+                    <input type="" id="lietotajsID" hidden>
                 </div>
                 <input type="submit" name="pieteikties" value="Saglabāt" class="btn">
             </form>

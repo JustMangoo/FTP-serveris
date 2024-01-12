@@ -8,7 +8,7 @@
         $l_uzvards = $_POST['uzvards'];
         $l_epasts = $_POST['epasts'];
         $l_loma = $_POST['loma'];
-        $l_parole = $_POST['parole'];
+        $l_parole = password_hash($_POST['parole'], PASSWORD_DEFAULT);
         
         
         $add_lietotajs_SQL = "INSERT INTO kursi_lietotaji(lietotajvards, vards, uzvards, epasts, parole, loma) VALUES ('$l_lietotajvards', '$l_vards', '$l_uzvards', '$l_epasts','$l_parole', '$l_loma')";
@@ -19,6 +19,6 @@
             die("Kļūda!".mysqli_error($savienojums));
         }
 
-        echo "Pieteikums pievienots!";
+        echo "Lietotajs pievienots!";
     }
 ?>

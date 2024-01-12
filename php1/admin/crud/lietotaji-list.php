@@ -17,7 +17,8 @@
             'epasts' => $row['epasts'],
             'loma' => $row['loma'],
             'reg_datums' => $row['reg_datums'],
-            'id' => $row['lietotajs_id']
+            'id' => $row['lietotajs_id'],
+            'statuss' => $row['statuss']
         );
     }
 

@@ -784,6 +784,16 @@ th:last-child {
   color: #777;
 }
 
+.checkbox-label {
+  display: flex;
+}
+
+.checkbox-label input {
+  width: 1rem;
+  margin: 0 1rem;
+}
+
+
 /*---------------- MEDIA ----------------*/
 
 @media (max-width: 1600px) {
