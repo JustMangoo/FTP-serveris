@@ -17,7 +17,7 @@
 <div class="modal modalActive">
     <div class="apply">
         <h2>Ielogoties sistēmā</h2>
-        <p class="login-kluda">
+        <p class="kluda">
             <?php
                 if(isset($_POST["ielogoties"])){
                     session_start();

@@ -62,7 +62,7 @@
                         <option value="admins">Admin</option>
                     </select>
                     <div class="checkbox-label">
-                        <label for="togglePasswordChange">Mainit paroli</label>
+                        <label for="password">Mainit paroli</label>
                         <input type="checkbox" id="togglePasswordChange" name="togglePasswordChange"> 
                     </div>
                     <input type="password" id="password" name="password" disabled>

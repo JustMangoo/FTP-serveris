@@ -580,7 +580,7 @@ select {
 
 /* Admin daļa: */
 
-.login-kluda {
+.kluda {
   text-align: center;
   color: #cc0000;
   margin: 1rem 0;
@@ -737,9 +737,7 @@ th:last-child {
 
 .profile-image i {
   font-size: 20rem;
-
 }
-
 
 .info-profile {
   display: grid;
@@ -792,7 +790,6 @@ th:last-child {
   width: 1rem;
   margin: 0 1rem;
 }
-
 
 /*---------------- MEDIA ----------------*/
 

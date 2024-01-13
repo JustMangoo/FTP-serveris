@@ -291,6 +291,20 @@ $(document).ready(function () {
     }
   });
 
+  function togglePasswordInput(edit) {
+    if (edit) {
+      $("#togglePasswordChange").closest("#togglePasswordChange").show();
+      $("#password").prop("disabled", true);
+      $("#password").removeAttr("required");
+      $("label[for='password']").text("Mainit paroli");
+    } else {
+      $("#togglePasswordChange").closest("#togglePasswordChange").hide();
+      $("#password").prop("disabled", false);
+      $("#password").attr("required", "required");
+      $("label[for='password']").text("Parole");
+    }
+  }
+
   $(document).on("click", ".lietotajs-item", (e) => {
     $(".modal").css("display", "flex");
     const element = e.currentTarget.parentElement.parentElement;
@@ -305,6 +319,7 @@ $(document).ready(function () {
       $("#loma").val(pieteikums.loma);
       $("#lietotajsID").val(pieteikums.id);
       edit = true;
+      togglePasswordInput(edit);
     });
     e.preventDefault();
   });
@@ -312,7 +327,6 @@ $(document).ready(function () {
   $("#lietotajaForma").submit((e) => {
     e.preventDefault();
 
-    // Declare postData before the if block
     let postData = {
       lietotajvards: $("#lietotajvards").val(),
       vards: $("#vards").val(),
@@ -322,7 +336,6 @@ $(document).ready(function () {
       id: $("#lietotajsID").val(),
     };
 
-    // If the password field is not disabled, add the password to postData
     if (!$("#password").prop("disabled")) {
       postData.password = $("#password").val();
     }
@@ -331,7 +344,6 @@ $(document).ready(function () {
       edit === false ? "crud/lietotaji-add.php" : "crud/lietotaji-edit.php";
     console.log(postData, url);
 
-    // Now postData is accessible here and contains all the required properties
     $.post(url, postData, (response) => {
       $("#lietotajaForma").trigger("reset");
       console.log(response);
@@ -343,6 +355,8 @@ $(document).ready(function () {
 
   $(document).on("click", "#new", (e) => {
     $(".modal").css("display", "flex");
+    edit = false;
+    togglePasswordInput(edit);
   });
 
   $(document).on("click", ".close_modal", (e) => {

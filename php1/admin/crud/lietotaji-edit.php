@@ -8,7 +8,14 @@
         $l_uzvards = $_POST['uzvards'];
         $l_epasts = $_POST['epasts'];
         $l_loma = $_POST['loma'];
-        
+
+        $check_SQL = "SELECT * FROM kursi_lietotaji WHERE lietotajvards = '$l_lietotajvards' AND statuss = 1 AND lietotajs_id <> $id";
+        $check_result = mysqli_query($savienojums, $check_SQL);
+
+        if(mysqli_num_rows($check_result) > 0 || mysqli_num_rows($check_result) < 0){
+            echo "<p class='kluda'>Lietotajs jau pastāv</p>";
+        }else{
+
         $update_lietotajs_SQL = "UPDATE kursi_lietotaji SET 
         lietotajvards = '$l_lietotajvards',
         vards = '$l_vards',
@@ -30,5 +37,6 @@
         }
 
         echo "Lietotajs rediģēts!";
+        }
     }
 ?>
