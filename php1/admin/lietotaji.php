@@ -65,7 +65,7 @@
                         <label for="togglePasswordChange">Mainit paroli</label>
                         <input type="checkbox" id="togglePasswordChange" name="togglePasswordChange"> 
                     </div>
-                    <input type="password" id="password" name="password" required disabled>
+                    <input type="password" id="password" name="password" disabled>
                     
                     <input type="" id="lietotajsID" hidden>
                 </div>

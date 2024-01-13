@@ -14,12 +14,13 @@
         vards = '$l_vards',
         uzvards = '$l_uzvards',
         epasts = '$l_epasts',
-        loma = '$l_loma'";
+        loma = '$l_loma'"; 
 
         if (isset($_POST['password']) && !empty($_POST['password'])) {
             $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $update_lietotajs_SQL .= ", password = '$hashedPassword'";
+            $update_lietotajs_SQL .= ", parole = '$hashedPassword'";
         }
+
 
         $update_lietotajs_SQL .= " WHERE lietotajs_id = $id";
         $update_lietotajs_result = mysqli_query($savienojums, $update_lietotajs_SQL);

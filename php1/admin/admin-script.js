@@ -50,7 +50,7 @@ $(document).ready(function () {
               ? kurss.apraksts.substring(0, 85) + "..."
               : kurss.apraksts;
 
-            const isChecked = kurss.statuss == 1 ? 'checked' : '';
+          const isChecked = kurss.statuss == 1 ? "checked" : "";
 
           template += `
                         <tr kursaID ="${kurss.id}">
@@ -79,9 +79,14 @@ $(document).ready(function () {
         const pieteikumi = JSON.parse(response);
         let template = "";
         pieteikumi.forEach((lietotajs) => {
-          let deleteButtonHtml = lietotajs.statuss === '0' ? '<b>dzēsts</b>' : 
-              `<a href="#" class="lietotajs-delete btn-delete"><i class="fa fa-trash"></i></a>`;
-      
+          let buttonHtml =
+            lietotajs.statuss === "0"
+              ? "<b>dzēsts</b>"
+              : `
+              <a href="#" class="lietotajs-item btn-edit"><i class="fa fa-edit"></i></a>
+              <a href="#" class="lietotajs-delete btn-delete"><i class="fa fa-trash"></i></a>
+              `;
+
           template += `
               <tr lietotajsID="${lietotajs.id}">
                   <td>${lietotajs.id}</td>
@@ -91,19 +96,17 @@ $(document).ready(function () {
                   <td>${lietotajs.epasts}</td>
                   <td>${lietotajs.loma}</td>
                   <td>${lietotajs.reg_datums}</td>
-                  <td>
-                      <a href="#" class="lietotajs-item btn-edit"><i class="fa fa-edit"></i></a>
-                      ${deleteButtonHtml} 
+                  <td>     
+                      ${buttonHtml} 
                   </td>
               </tr>
           `;
-      });
+        });
 
         $("#lietotaji").html(template);
       },
     });
   }
-
 
   function fetchJauniPieteikumi() {
     $.ajax({
@@ -159,7 +162,7 @@ $(document).ready(function () {
   $(document).on("click", ".pieteikums-item", (e) => {
     $(".modal").css("display", "flex");
     const element = $(this)[0].activeElement.parentElement.parentElement;
-    console.log(element)
+    console.log(element);
     const id = $(element).attr("kursaID");
     $.post("crud/pieteikums-single.php", { id }, (response) => {
       const pieteikums = JSON.parse(response);
@@ -226,20 +229,20 @@ $(document).ready(function () {
   $(document).on("click", ".kurss-item", (e) => {
     $(".modal").css("display", "flex");
     const element = e.currentTarget.parentElement.parentElement;
-    console.log(element)
+    console.log(element);
     const id = $(element).attr("kursaID");
     console.log("test".id);
     $.post("crud/kurss-single.php", { id }, (response) => {
-        const kurss = JSON.parse(response);
-        const isChecked = kurss.statuss == 1;
+      const kurss = JSON.parse(response);
+      const isChecked = kurss.statuss == 1;
 
-        $("#nosaukums").val(kurss.nosaukums);
-        $("#apraksts").val(kurss.apraksts);
-        $("#attels").val(kurss.attels);
-        $("#kurss-statuss").prop("checked", isChecked);
-        $("#kursaID").val(kurss.id);
-        
-        edit = true;
+      $("#nosaukums").val(kurss.nosaukums);
+      $("#apraksts").val(kurss.apraksts);
+      $("#attels").val(kurss.attels);
+      $("#kurss-statuss").prop("checked", isChecked);
+      $("#kursaID").val(kurss.id);
+
+      edit = true;
     });
     e.preventDefault();
   });
@@ -255,8 +258,7 @@ $(document).ready(function () {
       statuss: statuss,
       id: $("#kursaID").val(),
     };
-    const url =
-      edit === false ? "crud/kurss-add.php" : "crud/kurss-edit.php";
+    const url = edit === false ? "crud/kurss-add.php" : "crud/kurss-edit.php";
     console.log(postData, url);
     $.post(url, postData, (response) => {
       $("#kursaPievForma").trigger("reset");
@@ -277,21 +279,22 @@ $(document).ready(function () {
     $("#kursaPievForma").trigger("reset");
   });
 
-
   /* LIETOTAJI */
 
-  $('#togglePasswordChange').change(function() {
-    if ($(this).is(':checked')) {
-        $('#password').removeAttr('disabled');
+  $("#togglePasswordChange").change(function () {
+    if ($(this).is(":checked")) {
+      $("#password").removeAttr("disabled");
+      $("#password").attr("required", "required");
     } else {
-        $('#password').attr('disabled', 'disabled');
+      $("#password").attr("disabled", "disabled");
+      $("#password").removeAttr("required");
     }
   });
 
   $(document).on("click", ".lietotajs-item", (e) => {
     $(".modal").css("display", "flex");
     const element = e.currentTarget.parentElement.parentElement;
-    console.log(element)
+    console.log(element);
     const id = $(element).attr("lietotajsID");
     $.post("crud/lietotaji-single.php", { id }, (response) => {
       const pieteikums = JSON.parse(response);
@@ -308,18 +311,27 @@ $(document).ready(function () {
 
   $("#lietotajaForma").submit((e) => {
     e.preventDefault();
-    const postData = {
+
+    // Declare postData before the if block
+    let postData = {
       lietotajvards: $("#lietotajvards").val(),
       vards: $("#vards").val(),
       uzvards: $("#uzvards").val(),
       epasts: $("#epasts").val(),
       loma: $("#loma").val(),
       id: $("#lietotajsID").val(),
-      
     };
+
+    // If the password field is not disabled, add the password to postData
+    if (!$("#password").prop("disabled")) {
+      postData.password = $("#password").val();
+    }
+
     const url =
       edit === false ? "crud/lietotaji-add.php" : "crud/lietotaji-edit.php";
     console.log(postData, url);
+
+    // Now postData is accessible here and contains all the required properties
     $.post(url, postData, (response) => {
       $("#lietotajaForma").trigger("reset");
       console.log(response);
