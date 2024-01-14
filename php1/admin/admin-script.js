@@ -6,6 +6,7 @@ $(document).ready(function () {
   fetchPieprKursi();
   fetchKursi();
   fetchLietotaji();
+  fetchLogs();
 
   function fetchPieteikumi() {
     $.ajax({
@@ -104,6 +105,28 @@ $(document).ready(function () {
         });
 
         $("#lietotaji").html(template);
+      },
+    });
+  }
+
+  function fetchLogs() {
+    $.ajax({
+      url: "crud/logs-list.php",
+      type: "GET",
+      success: function (response) {
+        const pieteikumi = JSON.parse(response);
+        let template = "";
+        pieteikumi.forEach((loga) => {
+          template += `
+              <tr logaID="${loga.id}">
+                <td>${loga.laiks}</td>
+                <td>${loga.lietotajs}</td>
+                <td>${loga.darbiba}</td>
+              </tr>
+          `;
+        });
+
+        $("#logs").html(template);
       },
     });
   }
