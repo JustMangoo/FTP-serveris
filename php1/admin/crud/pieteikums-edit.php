@@ -12,7 +12,7 @@
         $p_kurss = $_POST['kurss'];
         $p_statuss = $_POST['statuss'];
 
-        $id_SQL = "SELECT piet_statuss FROM kursi WHERE piet_id = $id";
+        $id_SQL = "SELECT piet_statuss FROM kursu_pieteikumi WHERE piet_id = $id";
         $id_result = mysqli_query($savienojums, $id_SQL);
         while($row = mysqli_fetch_assoc($id_result)){
             $oldStatus = $row['piet_statuss'];
