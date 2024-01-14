@@ -374,4 +374,23 @@ $(document).ready(function () {
       });
     }
   });
+
+  $("#lietotajaParole").submit((e) => {
+    e.preventDefault();
+
+    let postData = {
+      newpasswordone: $("#newpasswordone").val(),
+      newpasswordtwo: $("#newpasswordtwo").val(),
+      password: $("#password").val(),
+      id: $("#lietotajsID").val(),
+    };
+
+    const url = "crud/lietotaji-parole.php";
+    console.log(postData, url);
+
+    $.post(url, postData, (response) => {
+      $("#lietotajaParole").trigger("reset");
+      console.log(response);
+    });
+  });
 });

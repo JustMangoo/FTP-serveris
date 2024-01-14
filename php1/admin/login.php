@@ -24,7 +24,7 @@
                     $Lietotajvards = mysqli_real_escape_string($savienojums, $_POST["lietotajs"]);
                     $Parole = mysqli_real_escape_string($savienojums, $_POST["parole"]);
 
-                    $lietotaja_atrasana_SQL = "SELECT * FROM kursi_lietotaji WHERE lietotajvards = '$Lietotajvards'";
+                    $lietotaja_atrasana_SQL = "SELECT * FROM kursi_lietotaji WHERE lietotajvards = '$Lietotajvards' AND statuss = 1";
                     $atrasanas_rezultats = mysqli_query($savienojums, $lietotaja_atrasana_SQL);
 
                     if(mysqli_num_rows($atrasanas_rezultats) == 1){

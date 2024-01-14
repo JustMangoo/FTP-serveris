@@ -36,7 +36,7 @@
         if (isset($_SESSION["lietotajvards_LYXQT"])) {
             $activeUsername = $_SESSION["lietotajvards_LYXQT"];
 
-            $lietotajs_SQL = "SELECT vards, uzvards, epasts, loma, reg_datums FROM kursi_lietotaji WHERE lietotajvards = ?";
+            $lietotajs_SQL = "SELECT * FROM kursi_lietotaji WHERE lietotajvards = ?";
             
             if ($stmt = mysqli_prepare($savienojums, $lietotajs_SQL)) {
                 mysqli_stmt_bind_param($stmt, "s", $activeUsername);
@@ -49,8 +49,15 @@
                     $email = $row["epasts"];
                     $regDate = $row["reg_datums"];
                     $userRole = $row["loma"];
+                    $userID = $row["lietotajs_id"];
                 } else {
-                    $userRole = "Nezināma loma";
+                    $userRole = "Nezināms";
+                    $name = "Nezināms";
+                    $surname = "Nezināms";
+                    $email = "Nezināms";
+                    $regDate = "Nezināms";
+                    $userRole = "Nezināms";
+                    $userID = "Nezināms";
                 }
                 mysqli_stmt_close($stmt);
             }
@@ -58,13 +65,30 @@
             echo "
             <div class='box'>
                 <div class='info'>
-                <h2>" . htmlspecialchars($name) ." ". htmlspecialchars($surname)  . "</h2>
-                    <h3>" . htmlspecialchars($activeUsername) . "</h3>
-                    <p>E-pasts: " . htmlspecialchars($email) . "</p>
-                    <p>Reģistrācijas datums: " . htmlspecialchars($regDate) . "</p>
-                    <p>Loma: " . htmlspecialchars($userRole) . "</p>
+                    <h2 >" . htmlspecialchars($name) ." ". htmlspecialchars($surname)  . "</h2>
+                    <h3 class='sub-head'>" . htmlspecialchars($activeUsername) . "</h3>
+                    <p><b>E-pasts:</b> " . htmlspecialchars($email) . "</p>
+                    <p><b>Reģistrācijas datums:</b> " . htmlspecialchars($regDate) . "</p>
+                    <p style='padding-bottom: 4rem;'><b>Loma:</b> " . htmlspecialchars($userRole) . "</p>
+            
+                    <h3>Mainīt paroli</h3>
+                    <form id='lietotajaParole' class='apply'>
+                        <div class='formElements'>
+
+                            <label for='password'>Vecā parole</label>
+                            <input type='password' id='password' autocomplete='current-password' name='password' required>
+                            <label for='password'>Jaunā parole</label>
+                            <input type='password' id='newpasswordone' autocomplete='new-password' name='new-password' required>
+                            <label for='password'>Atkārtot jauno paroli</label>
+                            <input type='password' id='newpasswordtwo' autocomplete='new-password' name='new-password' required>
+                            
+                            <input type='' id='lietotajsID' value='$userID' hidden>
+                        </div>
+                        <input type='submit' name='pieteikties' value='Apstiprināt' class='btn'>
+                    </form>
                 </div>
-            </div>";
+            </div>
+            ";
         } else {
             echo "
             <div class='box'>
@@ -76,7 +100,7 @@
     ?>
         
     </div>
-
+    
 </div>
 
 </body>

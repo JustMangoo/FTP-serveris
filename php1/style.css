@@ -574,6 +574,10 @@ select {
   border-radius: 0.4rem;
 }
 
+.apply input[type="password"]:disabled {
+  background: #e2e2e2;
+}
+
 .modal span {
   color: #cc0000;
 }
@@ -733,10 +737,14 @@ th:last-child {
   align-items: center;
   justify-content: center;
   aspect-ratio: 1/1;
+  padding: 3rem;
+  background-color: #ebe5f8;
+  border-radius: 0.4rem;
+  overflow: hidden;
 }
 
 .profile-image i {
-  font-size: 20rem;
+  font-size: 17rem;
 }
 
 .info-profile {
@@ -767,19 +775,19 @@ th:last-child {
 
 .info-profile .box h2 {
   font-size: 3rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0;
   color: var(--secondcolor);
 }
 
 .info-profile .box h3 {
   font-size: 1.4rem;
-  padding-bottom: 0.5rem;
-  color: var(--secondcolor);
+  padding-bottom: 1rem;
 }
 
 .info-profile .box p {
   font-size: 1rem;
   color: #777;
+  padding-bottom: 0.5rem;
 }
 
 .checkbox-label {
@@ -789,6 +797,10 @@ th:last-child {
 .checkbox-label input {
   width: 1rem;
   margin: 0 1rem;
+}
+
+.sub-head {
+  color: #777;
 }
 
 /*---------------- MEDIA ----------------*/
