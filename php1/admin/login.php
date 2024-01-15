@@ -32,6 +32,7 @@
                             if(password_verify($Parole, $ieraksts["parole"])){
                                 $_SESSION["lietotajvards_LYXQT"] = $ieraksts["lietotajvards"];
                                 header("location:./");
+                                
                             }else{
                                 echo "Nepareizs lietotājs vai parole!";
                             }

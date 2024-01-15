@@ -10,8 +10,11 @@
     }
 
     while($row = mysqli_fetch_array($select_result)){
+        $date = new DateTime($row['laiks']);
+        $formattedDate = $date->format('d.m.Y H:i:s');
+
         $json[] = array(
-            'laiks' => $row['laiks'],
+            'laiks' => $formattedDate,
             'lietotajs' => $row['lietotajs'],
             'darbiba' => $row['darbiba'],
             'id' => $row['loga_id'],

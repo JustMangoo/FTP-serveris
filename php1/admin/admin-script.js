@@ -406,6 +406,7 @@ $(document).ready(function () {
       newpasswordtwo: $("#newpasswordtwo").val(),
       password: $("#password").val(),
       id: $("#lietotajsID").val(),
+      message: $(".kluda").val(),
     };
 
     const url = "crud/lietotaji-parole.php";
@@ -414,6 +415,8 @@ $(document).ready(function () {
     $.post(url, postData, (response) => {
       $("#lietotajaParole").trigger("reset");
       console.log(response);
+
+      $(".kluda").text(response);
     });
   });
 });

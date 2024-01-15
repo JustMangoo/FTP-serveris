@@ -36,7 +36,7 @@
         if (isset($_SESSION["lietotajvards_LYXQT"])) {
             $activeUsername = $_SESSION["lietotajvards_LYXQT"];
 
-            $lietotajs_SQL = "SELECT * FROM kursi_lietotaji WHERE lietotajvards = ?";
+            $lietotajs_SQL = "SELECT * FROM kursi_lietotaji WHERE lietotajvards = ? AND statuss = 1";
             
             if ($stmt = mysqli_prepare($savienojums, $lietotajs_SQL)) {
                 mysqli_stmt_bind_param($stmt, "s", $activeUsername);
@@ -72,9 +72,11 @@
                     <p style='padding-bottom: 4rem;'><b>Loma:</b> " . htmlspecialchars($userRole) . "</p>
             
                     <h3>Mainīt paroli</h3>
+                    <p class='kluda'></p>
                     <form id='lietotajaParole' class='apply'>
                         <div class='formElements'>
 
+                            
                             <label for='password'>Vecā parole</label>
                             <input type='password' id='password' autocomplete='current-password' name='password' required>
                             <label for='password'>Jaunā parole</label>
