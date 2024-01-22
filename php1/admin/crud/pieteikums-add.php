@@ -4,10 +4,10 @@
 
     if(isset($_POST['id'])){
         $id = $_POST['id'];
-        $p_vards = $_POST['vards'];
-        $p_uzvards = $_POST['uzvards'];
-        $p_epasts = $_POST['epasts'];
-        $p_talrunis = $_POST['talrunis'];
+        $p_vards = encryptData($_POST['vards']);
+        $p_uzvards = encryptData($_POST['uzvards']);
+        $p_epasts = encryptData($_POST['epasts']);
+        $p_talrunis = encryptData($_POST['talrunis']);
         $p_komentars = $_POST['komentars'];
         $p_kurss = $_POST['kurss'];
         $p_statuss = $_POST['statuss'];

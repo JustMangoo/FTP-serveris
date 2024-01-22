@@ -14,10 +14,10 @@
     
         while($row = mysqli_fetch_array($select_pieteikums_result)){
             $json[] = array(
-                'vards' => $row['piet_vards'],
-                'uzvards' => $row['piet_uzvards'],
-                'epasts' => $row['piet_epasts'],
-                'talrunis' => $row['piet_talrunis'],
+                'vards' => decryptData($row['piet_vards']),
+                'uzvards' => decryptData($row['piet_uzvards']),
+                'epasts' => decryptData($row['piet_epasts']),
+                'talrunis' => decryptData($row['piet_talrunis']),
                 'komentars' => $row['piet_komentars'],
                 'kurss' => $row['piet_kurss'],
                 'statuss' => $row['piet_statuss'],

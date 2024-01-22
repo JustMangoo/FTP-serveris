@@ -356,10 +356,10 @@
 
 <?php
     if(isset($_POST["pieteikties"])){
-        $vards_ievade = mysqli_real_escape_string($savienojums, $_POST['vards']);
-        $uzvards_ievade = mysqli_real_escape_string($savienojums, $_POST['uzvards']);
-        $epasts_ievade = mysqli_real_escape_string($savienojums, $_POST['epasts']);
-        $talrunis_ievade = mysqli_real_escape_string($savienojums, $_POST['talrunis']);
+        $vards_ievade = mysqli_real_escape_string($savienojums, encryptData($_POST['vards']));
+        $uzvards_ievade = mysqli_real_escape_string($savienojums,encryptData( $_POST['uzvards']));
+        $epasts_ievade = mysqli_real_escape_string($savienojums, encryptData($_POST['epasts']));
+        $talrunis_ievade = mysqli_real_escape_string($savienojums, encryptData($_POST['talrunis']));
         $komentari_ievade = mysqli_real_escape_string($savienojums, $_POST['komentari']);
         $kursaID = mysqli_real_escape_string($savienojums, $_POST['kursaID']);
 

@@ -13,4 +13,20 @@
         echo "Savienojums izveidots!";
     }
     */
+
+    function encryptData($data) {
+        $cipherMethod = 'AES-128-CBC';
+        $key = 'Your32ByteEncryptionKeyHere';
+        $iv = 'Your16ByteIVHere';
+
+        return openssl_encrypt($data, $cipherMethod, $key, 0, $iv);
+    }
+    
+    function decryptData($data) {
+        $cipherMethod = 'AES-128-CBC';
+        $key = 'Your32ByteEncryptionKeyHere';
+        $iv = 'Your16ByteIVHere';
+
+        return openssl_decrypt($data, $cipherMethod, $key, 0, $iv);
+    }
 ?>

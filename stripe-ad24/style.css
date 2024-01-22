@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    background: url("https://kristovskis.lv/4pt/shared/stripe-bg.png");
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    flex-wrap: wrap;
+}
+
+.left-panel{
+    width: 25rem;
+    height: 25rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem 0 0 1rem;
+}
+
+.right-panel{
+    width: 25rem;
+    height: 25rem;
+    padding: 1.2rem;
+    background: rgba(95, 8, 89, 0.5);
+    border-radius: 0 1rem 1rem 0;
+    color: #eee;
+    text-align: justify;
+}
+
+.panel{
+    max-width: 50rem;
+    min-height: 5rem;
+    padding: 1.2rem;
+    background: rgba(95, 8, 89, 0.5);
+    border-radius: 1rem;
+    color: #eee;
+    text-align: justify;
+}
+
+h1{
+    text-align: center;
+}
+
+input{
+    background: #ddd;
+    border-radius: 0.7rem;
+    padding: 0.7rem;
+    margin: 0.6rem 0;
+    width: 100%;
+    border: none;
+}
+
+button{
+    border-radius: 0.7rem;
+    border: 0.1rem solid #610268;
+    background: #610268;
+    color: #fff;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 100%;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #eee;
+    color: #610268;
+    transition: 0.3s linear;
+}
+
+.stripe-button{
+    background: none;
+    border: 0.1rem solid #eee;
+    color: #eee;
+}
