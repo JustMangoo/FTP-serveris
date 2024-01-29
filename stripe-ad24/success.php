@@ -10,6 +10,8 @@
 <body>
 
     <?php
+        require("../php1/connectDB.php");
+
         if(!empty($_GET['session_id'])){
             $session_id = $_GET['session_id'];
             require_once 'stripe-php/init.php';
@@ -22,7 +24,7 @@
             }
 
             if(empty($api_error) && $checkout_session){
-                $customer_email = $checkout_session->customer_details->email;
+                $customer_email = encryptData($checkout_session->customer_details->email);
 
                 try{
                     $paymentIntent = \Stripe\PaymentIntent::retrieve($checkout_session->payment_intent);
@@ -32,15 +34,35 @@
 
                 if(empty($api_error) && $paymentIntent){
                     if(!empty($paymentIntent) && $paymentIntent->status == "succeeded"){
-                        $transactionID = $paymentIntent->id;
-                        $payment_status = $paymentIntent->status;
+                        $transactionID =  encryptData($paymentIntent->id);
+                        $payment_status = encryptData($paymentIntent->status);
                         $password = "";
-                        for($i = 0; $i < 4; $i++){
+                        for($i = 0; $i < 5; $i++){
                             $password .= chr(rand(65, 90));
                             $password .= chr(rand(48, 57));
                         }
 
-                        $password .= chr(rand(35, 37));
+                        $password = password_hash($password, PASSWORD_DEFAULT);
+
+                        //dati uz datubazi
+
+                        $check_SQL = "SELECT * FROM stripe_lietotaji WHERE epasts = '$customer_email' AND statuss = 'succeeded' AND maksajuma_id = '$transactionID'";
+                        $check_result = mysqli_query($savienojums, $check_SQL);
+                
+                        if(mysqli_num_rows($check_result) > 0 || mysqli_num_rows($check_result) < 0){
+                            echo "Ieraksts jau pastāv";
+                        }else{
+                            $add_SQL = "INSERT INTO stripe_lietotaji(maksajuma_id, statuss, epasts, parole) VALUES ('$transactionID', '$payment_status', '$customer_email', '$password')";
+                            $add_result = mysqli_query($savienojums, $add_SQL);
+                
+                            if(!$add_result){
+                                die("Kļūda!".mysqli_error($savienojums));
+                            }
+                
+                            echo "Lietotajs pievienots!";
+                        }
+
+                        //izvade
 
                         $statusMsg = "Maksājums veiksmīgi apstrādāts!";
                         $dataMsg = "
@@ -50,7 +72,7 @@
                             <p>Maksājuma statuss: <b>$payment_status</b></p>
                             <p>E-pasts: <b>$customer_email</b></p>
                             <p>Parole: <b>$password</b></p>
-                            <button type='submit' class='stripe-button'>Ielogoties</button>
+                            <button class='stripe-button'>Atgriezties uz sākumlapu</button>
                         ";
                     }
                 }else{
